@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { createContext, useEffect, useState } from 'react';
+import Data from './data.json'
+import HomePage from './Components/HomePage';
+import CreatUser from './Components/CreateUser';
+import { Route,Routes } from 'react-router-dom';
 import './App.css';
 
+
+export const Context = createContext()
 function App() {
+
+  const [data,setData] = useState([])
+
+  useEffect(()=>{
+
+   if(localStorage.getItem('initialData')) {
+    // localStorage.setItem('initialData',JSON.stringify(Data))
+    setData(JSON.parse(localStorage.getItem('initialData')))
+   } else {
+    localStorage.setItem('initialData',JSON.stringify(Data))
+   }
+  },[])
+
   return (
+    <Context.Provider value={{data,setData}}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Routes>
+      <Route path='/' element={<HomePage />}/>
+      <Route path='/CreateUser' element={<CreatUser />}/>
+     </Routes>
     </div>
+    </Context.Provider>
   );
 }
 

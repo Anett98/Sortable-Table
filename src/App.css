@@ -1,38 +1,92 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table{
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 50px;
   text-align: center;
+  min-width: 70%;
+}
+td,th{
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 10px;
+}
+tr:last-child{
+  border-right: none;
+}
+.Container{
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.creatBtn{
+  padding: 10px;
+  border: 2px solid black;
+  background: whitesmoke;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.accs{
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter{
+  width: 300px;
+  font-size: 20px;
+  padding: 2px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  align-items: center;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.create{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 50px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  font-weight: 700;
+  font-size: 20px;
+} 
+label input{
+  width: 300px;
+  font-size: 20px;
+  padding: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.createToNav{
+  padding: 10px;
+  border: 1px solid black;
+  background: whitesmoke;
+  font-size: 18px;
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.name:focus{
+  background-color: gray;
+}
+.number:focus{
+  background-color: gray;
 }
