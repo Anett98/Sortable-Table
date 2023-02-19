@@ -7,6 +7,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   return (
     <div>
+      <h1>Sorting Table</h1>
       <div className="accs">
         <button className="creatBtn" onClick={() => navigate("/CreateUser")}>
           Create User

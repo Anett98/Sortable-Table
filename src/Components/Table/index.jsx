@@ -5,6 +5,7 @@ import { BiSortAlt2 } from "react-icons/bi";
 function Table() {
   const [isClickedName, setIsClickedName] = useState(false);
   const [isClickedNumber, setIsClickedNumber] = useState(false);
+  const [isClickedCountry, setIsClickedCountry] = useState(false);
   const { data, setData } = useContext(Context);
 
   const handleNameSorting = () => {
@@ -32,6 +33,19 @@ function Table() {
     }
   };
 
+  const handleCountrySorting = () => {
+    if (localStorage.getItem("initialData")) {
+      setData(
+        JSON.parse(localStorage.getItem("initialData")).sort((a, b) =>
+          !isClickedCountry
+            ? a.country.localeCompare(b.country)
+            : b.country.localeCompare(a.country)
+        )
+      );
+      setIsClickedCountry(!isClickedCountry);
+    }
+  };
+
   return (
     <div className="Container">
       <table>
@@ -48,8 +62,10 @@ function Table() {
             >
               RangeNumber <BiSortAlt2 />
             </th>
-            <th>Country</th>
             <th>Email</th>
+            <th className="country" tabIndex="0" onClick={handleCountrySorting}>
+              Country <BiSortAlt2 />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -59,8 +75,8 @@ function Table() {
                 <td>{person.name}</td>
                 <td>{person.phone}</td>
                 <td>{person.numberrange}</td>
-                <td>{person.country}</td>
                 <td>{person.email}</td>
+                <td>{person.country}</td>
               </tr>
             );
           })}

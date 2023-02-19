@@ -1,52 +1,57 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-table{
+table {
   border: 1px solid black;
   border-collapse: collapse;
-  margin-top: 50px;
   margin-bottom: 50px;
   text-align: center;
   min-width: 70%;
 }
-td,th{
+td,
+th {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   padding: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-tr:last-child{
-  border-right: none;
+th {
+  background-color: plum;
 }
-.Container{
+
+.Container {
   display: flex;
   justify-content: center;
 }
 
-
-.creatBtn{
+.creatBtn {
   padding: 10px;
-  border: 2px solid black;
-  background: whitesmoke;
+  border: 1px solid black;
+  background: plum;
   cursor: pointer;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.accs{
-  padding: 15px;
+.accs {
+  padding: 55px;
   display: flex;
   justify-content: center;
   gap: 300px;
 }
 
-.filter{
+.filter {
   width: 300px;
   font-size: 20px;
   padding: 2px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-form{
+form {
+  background-color: plum;
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -56,7 +61,7 @@ form{
   justify-content: center;
 }
 
-.create{
+.create {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,26 +73,41 @@ label {
   margin: 10px;
   font-weight: 700;
   font-size: 20px;
-} 
-label input{
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+label input {
   width: 300px;
   font-size: 20px;
   padding: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+h1 {
+  text-align: center;
+  margin: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.createToNav{
+.createToNav {
   padding: 10px;
   border: 1px solid black;
-  background: whitesmoke;
+  background-color: rgb(104, 20, 104);
+  color: white;
   font-size: 18px;
-  font-weight: bold;
-  width: 80px;
+  font-weight: 700;
+  width: 100px;
   cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.name:focus{
-  background-color: gray;
+.name:focus {
+  background-color: rgb(104, 20, 104);
+  color: white;
 }
-.number:focus{
-  background-color: gray;
+.number:focus {
+  background-color: rgb(104, 20, 104);
+  color: white;
+}
+.country:focus {
+  background-color: rgb(104, 20, 104);
+  color: white;
 }
